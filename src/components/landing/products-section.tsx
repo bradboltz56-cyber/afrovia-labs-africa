@@ -1,22 +1,22 @@
 "use client"
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const products = [
     {
         name: "AfroviaLearn",
         tag: "AI Tutor",
-        desc: "An offline AI learnin Assistant with locally cached lessons."
+        desc: "A guided AI tutor with cached lessons, practice, and feedback for learners with limited connectivity."
     },
     {
         name: "SchoolOS",
         tag: "School Management System",
-        desc: "An all in one management system for school operatons."
+        desc: "One clear view of attendance, classes, people, and day-to-day operations."
     },
     {
-        name: "Communty Hubs",
-        tag: "Local infrastructure",
-        desc: "Hubs for students to learn."
+        name: "Virtual Labs",
+        tag: "Practical learning",
+        desc: "Safe, visual spaces where students can test ideas and build confidence before the exam."
     }
 ];
 
@@ -57,15 +57,15 @@ export function ProductSection() {
                     The suite
                 </motion.span>
                 <motion.h2 variants={itemVariants} className="mt-3 max-w-xl font-display text-3xl font-semibold text-ink md:text-4xl">
-                     The products your schools need.
+                     Tools that turn limited access into more learning.
                 </motion.h2>
                 <div className="mt-12 grid gap-6 md:grid-cols-3">
                     {products.map((p)=> (
                         <motion.div 
                             key={p.name} 
-                            className="rounded-2xl border border-ink/10 bg-paper p-8"
+                            className="border border-ink/20 bg-paper p-8"
                             variants={itemVariants}
-                            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                            whileHover={{ borderColor: "#16442D", transition: { duration: 0.2 } }}
                         >
                             <span className="font-mono text-xs uppercase tracking-widest text-ember">{p.tag}</span>
                             <h3 className="mt-3 font-display text-2xl font-semibold text-forest">{p.name}</h3>

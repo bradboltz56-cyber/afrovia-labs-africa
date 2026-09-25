@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 
 const containerVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -25,14 +25,14 @@ const itemVariants = {
 export function CTASection() {
     return (
         <motion.section 
-            className="bg-peach/40 px-6 py-16"
+            className="border-t border-ink/15 bg-peach px-6 py-20"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={containerVariants}
         >
-            <motion.div className="mx-auto grid max-w-6xl items-center gap-10 rounded-3xl bg-paper p-8 shadow-sm md:grid-cols-[1fr_1.4fr] md:p-10" variants={itemVariants}>
-                <div className="overflow-hidden rounded-2xl">
+            <motion.div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr]" variants={itemVariants}>
+                <div className="overflow-hidden border border-forest">
                     <Image 
                         src="/images/students-tablet.png" 
                         alt="students using a tablet" 
@@ -43,19 +43,19 @@ export function CTASection() {
                     />
                 </div>
                 <div>
-                    <h2 className="font-display text-3xl font-semibold text-forest md:text-4xl">
-                        Let&apos;s build the future of education together
+                    <p className="font-mono text-xs uppercase tracking-widest text-forest/70">Ready to make access practical?</p>
+                    <h2 className="mt-3 font-display text-3xl font-semibold text-forest md:text-5xl">
+                        Put better tools in the hands of every school.
                     </h2>
                     <p className="mt-4 max-w-md text-ink/85">
-                        Join our growing network of schools, partners,  and innovators
-                        bringing accessible digital education to every corner of Africa.
+                        Join schools and partners building a more resilient learning system across Africa. Start with a conversation about your learners, your context, and what is possible next.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                        <Link href="#partner" className="rounded-full bg-forest px-6 py-3 font-medium text-paper transition hover:bg-forest-600">
-                            Partner with us
+                        <Link href="/contact" className="bg-forest px-6 py-3 font-medium text-paper transition hover:bg-forest-600">
+                            Start a conversation
                         </Link>
-                        <Link href="#partner" className="rounded-full border border-forest px-6 py-3 font-medium text-forest transition hover:bg-forest/60">
-                           Join pilot schools
+                                <Link href="/projects" className="border border-forest px-6 py-3 font-medium text-forest transition hover:bg-forest/10">
+                                    See the impact
                         </Link>
                     </div>
                 </div>

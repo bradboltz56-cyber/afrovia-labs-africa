@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const quickLinks = ["Home", "Solutions", "Products", "Projects", "About Us", "Resources"];
-const solutions = ["AI Learnng Assistant", "School Management", "Offline Learning Infrastructure", "SMS & USSD Access"];
+const solutions = ["AI Learning Assistant", "School Management", "Offline Learning Infrastructure", "SMS & USSD Access"];
 const company = ["About Us", "Our Mission", "Careers", "Blog", "Contact Us"];
 
 const containerVariants = {
@@ -62,7 +62,7 @@ export function Footer() {
                     </p>
                     <div className="mt-5 flex gap-3">
                         {["Facebook", "Twitter", "LinkedIn", "Youtube"].map((label) => (
-                            <Link key={label} href="#" className="flex h-8 w-8 items-center justify-center rounded-full border border-paper/30 text-xs transition hover:border-leaf hover:text-leaf" aria-label={`Follow us on ${label}`}>
+                            <Link key={label} href="#" className="flex h-8 w-8 items-center justify-center border border-paper/30 text-xs transition hover:border-leaf hover:text-leaf" aria-label={`Follow us on ${label}`}>
                                 {label[0]}
                             </Link>
                         ))}
@@ -76,7 +76,7 @@ export function Footer() {
                     <p className="mt-4 text-sm text-paper/70">
                         Get updates on our latest solutions and impact stories.
                     </p>
-                    <form action="" className="mt-4 flex overflow-hidden rounded-full border border-paper/30">
+                    <form action="" className="mt-4 flex overflow-hidden border border-paper/30">
                         <Input type="email" className="w-full bg-transparent px-4 py-2 text-sm text-paper placeholder:text-paper/60 focus:outline-none" placeholder="Enter your email" aria-label="Email address"/>
                         <Button type="submit" className="shrink-0 bg-ember px-4 py-2 text-sm font-medium text-forest transition hover:bg-ember-600">
                             Submit

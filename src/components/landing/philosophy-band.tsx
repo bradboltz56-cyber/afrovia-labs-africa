@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const principles = [
     "Designed for real-world African conditions",
@@ -40,7 +40,7 @@ export function PhilosophyBand(){
         >
             <div className="mx-auto max-w-6xl">
                 <motion.p variants={itemVariants} className="max-w-lg font-display text-2xl font-medium leading-snug">
-                    Digital inclusion isn&apos;t a feature. It&apos;s the foundation.
+                    Access is not a feature. It is the foundation for better outcomes.
                 </motion.p>
                 <ul className="mt-10 grid gap-6 font-mono text-sm text-paper/70 md:grid-cols-4">
                     {principles.map((p)=>(
