@@ -32,19 +32,25 @@ const itemVariants = {
 export function PhilosophyBand(){
     return (
         <motion.section 
-            className="bg-forest px-6 py-16 text-paper"
+            className="bg-sea-green-100 px-6 py-16 text-white md:py-20"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={containerVariants}
         >
+<<<<<<< HEAD
+            <div className="mx-auto max-w-7xl">
+              <motion.p variants={itemVariants} className="max-w-3xl font-display text-3xl font-medium leading-tight md:text-4xl">
+                Technology should meet learners where they are, and help them go further.
+=======
             <div className="mx-auto max-w-6xl">
                 <motion.p variants={itemVariants} className="max-w-lg font-display text-2xl font-medium leading-snug">
                     Access is not a feature. It is the foundation for better outcomes.
+>>>>>>> a380728c0ab4bb74460f68bccdb32e2c6f5b782c
                 </motion.p>
-                <ul className="mt-10 grid gap-6 font-mono text-sm text-paper/70 md:grid-cols-4">
+              <ul className="mt-10 grid gap-x-8 gap-y-6 text-sm text-white/75 sm:grid-cols-2 lg:grid-cols-4">
                     {principles.map((p)=>(
-                        <motion.li key={p} variants={itemVariants} className="border-t border-paper/30 pt-4">{p}</motion.li>
+                  <motion.li key={p} variants={itemVariants} className="border-t border-white/30 pt-4">{p}</motion.li>
                     ))}
                 </ul>
             </div>

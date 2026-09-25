@@ -1,24 +1,17 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function SimulatorsPage() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-paper">
-        <section className="px-6 py-24">
-          <div className="mx-auto max-w-6xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-forest/60">Solutions</span>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
-              Simulators
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink/80">
-              Simulation tools for practical learning in science, math, and technical subjects.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <MarketingPage
+      eyebrow="Learning solution"
+      title="Turn complex ideas into something learners can explore."
+      description="Simulation tools create practical learning experiences across science, mathematics and technical subjects."
+      image="/images/students-tablet.png"
+      imageAlt="Students learning through a shared digital lesson"
+      sectionTitle="Learn by trying things out."
+      sectionCopy="Simulations give learners a way to test ideas, observe outcomes and revisit concepts at their own pace, alongside classroom teaching."
+      points={["Interactive scenarios for practical understanding", "Experiences spanning science, mathematics and technical topics", "Flexible learning alongside teacher-led lessons"]}
+      related={[{ label: "Explore Virtual Science Labs", href: "/solutions/virtual-science-labs" }, { label: "Browse all products", href: "/products" }]}
+    />
   );
 }

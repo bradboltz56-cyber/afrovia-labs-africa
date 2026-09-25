@@ -1,24 +1,17 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function ProductsPage() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-paper">
-        <section className="px-6 py-24">
-          <div className="mx-auto max-w-6xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-forest/60">Products</span>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
-              Our products
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink/80">
-              A suite of offline-first tools built to reinforce education across Africa.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <MarketingPage
+      eyebrow="Our products"
+      title="One connected suite for a richer learning experience."
+      description="Explore digital tools for learning, school operations and hands-on discovery, designed for the needs of African education."
+      image="/images/students-tablet.png"
+      imageAlt="Students learning together with a digital device"
+      sectionTitle="More than a collection of apps."
+      sectionCopy="From classroom learning to the work behind the scenes, our products are designed to support the wider school experience and make digital education more practical."
+      points={["AI-powered learning assistance", "School management and administration", "Virtual labs, simulators and digital library access"]}
+      related={[{ label: "AI Learning Assistant", href: "/solutions/ai-learning-assistant" }, { label: "School Management", href: "/solutions/school-management-system" }, { label: "Virtual Science Labs", href: "/solutions/virtual-science-labs" }, { label: "Digital Library", href: "/solutions/digital-library" }, { label: "Simulators", href: "/solutions/simulators" }]}
+    />
   );
 }

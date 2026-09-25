@@ -1,24 +1,17 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function AILearningAssistantPage() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-paper">
-        <section className="px-6 py-24">
-          <div className="mx-auto max-w-6xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-forest/60">Solutions</span>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
-              AI Learning Assistant
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink/80">
-              An offline AI learning assistant with locally cached lessons, designed for low-connectivity environments.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <MarketingPage
+      eyebrow="Learning solution"
+      title="Personalised support that helps every learner keep going."
+      description="An AI learning assistant with locally cached lessons, designed to make curriculum-aligned help more accessible in low-connectivity environments."
+      image="/images/students-learning-tablet.png"
+      imageAlt="Learners studying together with a tablet"
+      sectionTitle="Learning support, ready when it is needed."
+      sectionCopy="Learners benefit from timely explanations and opportunities to practise. An offline-ready assistant can bring useful support closer, even when a strong connection is not available."
+      points={["Locally cached learning materials", "On-demand support for independent study", "Designed for classrooms with limited connectivity"]}
+      related={[{ label: "Explore School Management", href: "/solutions/school-management-system" }, { label: "Browse all products", href: "/products" }]}
+    />
   );
 }
