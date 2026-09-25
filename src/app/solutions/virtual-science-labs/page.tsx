@@ -1,24 +1,17 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function VirtualScienceLabsPage() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-paper">
-        <section className="px-6 py-24">
-          <div className="mx-auto max-w-6xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-forest/60">Solutions</span>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
-              Virtual Science Labs
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink/80">
-              Interactive virtual labs that bring hands-on science experiences to every classroom.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <MarketingPage
+      eyebrow="Learning solution"
+      title="Make space for discovery in every science lesson."
+      description="Interactive virtual labs bring hands-on science experiences to classrooms, helping learners explore ideas through guided activity."
+      image="/images/students-learning-tablet.png"
+      imageAlt="Students exploring a lesson together on a digital device"
+      sectionTitle="Experiment, observe and understand."
+      sectionCopy="Practical exploration helps make abstract ideas tangible. Virtual lab experiences can add new ways for learners to investigate scientific concepts and build confidence."
+      points={["Interactive exploration of science concepts", "Guided activities for classroom learning", "Digital experiences that complement practical teaching"]}
+      related={[{ label: "Explore Simulators", href: "/solutions/simulators" }, { label: "Browse all products", href: "/products" }]}
+    />
   );
 }

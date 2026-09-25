@@ -1,24 +1,17 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function AboutPage() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-paper">
-        <section className="px-6 py-24">
-          <div className="mx-auto max-w-6xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-forest/60">About Us</span>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
-              Our mission
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink/80">
-              AfroviaLabs builds offline-first digital education systems that are simple, reliable, and inclusive for Africa.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <MarketingPage
+      eyebrow="About AfroviaLabs"
+      title="Learning technology for African classrooms."
+      description="We build offline-first digital education systems that are simple, reliable and inclusive, helping schools bring more learning within reach."
+      image="/images/students-learning-tablet.png"
+      imageAlt="Students learning together with a tablet"
+      sectionTitle="Built around the realities schools face."
+      sectionCopy="Education technology is most useful when it fits the conditions learners and educators work in every day. Our focus is practical access, clear experiences and tools that can keep working when connectivity is limited."
+      points={["Learning experiences designed for low-connectivity settings", "Straightforward tools for learners, educators and school teams", "A focus on access, relevance and local education priorities"]}
+      related={[{ label: "Explore our projects", href: "/projects" }, { label: "Meet the team", href: "/about/careers" }]}
+    />
   );
 }

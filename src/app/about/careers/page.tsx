@@ -1,24 +1,17 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function CareersPage() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-paper">
-        <section className="px-6 py-24">
-          <div className="mx-auto max-w-6xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-forest/60">Careers</span>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
-              Join the team
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink/80">
-              Help us shape the future of education technology across Africa.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <MarketingPage
+      eyebrow="Careers"
+      title="Bring your skills to work that matters."
+      description="Help shape thoughtful education technology for learners, educators and schools across Africa."
+      image="/images/students-tablet.png"
+      imageAlt="Students sharing a tablet in a classroom"
+      sectionTitle="Build with purpose and perspective."
+      sectionCopy="The best education tools come from understanding the people who use them. We value curious, collaborative people who care about making learning more accessible."
+      points={["Work on real challenges in education", "Bring product, technology and community perspectives together", "Help create tools that are useful beyond the best-connected settings"]}
+      related={[{ label: "Learn about our mission", href: "/about" }, { label: "Contact our team", href: "/contact" }]}
+    />
   );
 }

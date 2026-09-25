@@ -1,20 +1,11 @@
 "use client"
 
 import Link from "next/link";
-import { Button } from "../ui/button";
+import Image from "next/image";
+import { ArrowDown, ArrowRight } from "lucide-react";
+import { buttonVariants } from "../ui/button";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-
-// import Image from "next/image"
-
-const nodes = [
-    {x:82, y:18, delay: "0s"},
-    {x:92, y:46, delay: "0.4s"},
-    {x:78, y:78, delay: "0.8s"},
-    {x:46, y:90, delay: "1.2s"},
-    {x:14, y:74, delay: "1.6s"},
-    {x:6, y:40, delay: "2s"},
-    {x:22, y:12, delay: "2.4s"},
-]
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -39,64 +30,52 @@ const itemVariants = {
 export function Hero() {
     return (
         <motion.section
-            className="relative overflow-hidden bg-forest text-paper"
+            className="relative isolate flex min-h-[620px] h-[calc(100svh-76px)] max-h-[790px] items-end overflow-hidden bg-sea-green-100 text-white"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
-            <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center md:py-32">
-                <div>
-                    <motion.span variants={itemVariants} className="inline-flex items-center gap-2 rounded-full border border-leaf/40 bg-forest-600/60 px-3 py-1 font-mono text-xs uppercase tracking-widest text-leaf">
-                        Offline-first Africa-first
-                    </motion.span>
-                    <motion.h1 variants={itemVariants} className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
-                        Learning that doesn&apos;t wait <br/> for a signal.
-                    </motion.h1>
-                    <motion.p variants={itemVariants} className="mt-6 max-w-md text-lg text-paper/80">
-                        AfroviaLabs builds offline-first education tools — an AI tutor, school management system, and virtual labs — that work on any phone, anywhere, without internet.
-                    </motion.p>
-                    <motion.div variants={itemVariants} className="mt-10 flex flex-wrap gap-4">
-                        <Button className="bg-ember text-forest hover:bg-ember-600">
-                            <Link href="#products">See the products</Link>
-                        </Button>
-                        <Button variant="ghost" className="border border-paper/40 text-paper hover:bg-paper/10">
-                            <Link href="#contact">Bring it to your school</Link>
-                        </Button>
-                    </motion.div>
-                    <motion.dl variants={itemVariants} className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-paper/20 pt-6 font-mono text-sm">
-                        <div>
-                            <dt className="text-paper/70">Works</dt>
-                            <dd className="text-leaf">Offline</dd>
-                        </div>
-                        <div>
-                            <dt className="text-paper/70">Reaches</dt>
-                            <dd className="text-leaf">Any phone</dd>
-                        </div>
-                        <div>
-                            <dt className="text-paper/70">Built for</dt>
-                            <dd className="text-leaf">Real Schools</dd>
-                        </div>
-                    </motion.dl>
-                </div>
-                <motion.div 
-                    className="relative mx-auto aspect-square w-full max-w-md"
-                    variants={itemVariants}
-                >
-                    <svg viewBox="0 0 100 100" className="h-full w-full">
-                        {nodes.map((n, i) => (
-                            <line key={`l-${i}`} x1="50" y1="50" x2={n.x} y2={n.y}/>
-                        ))}
-                        {nodes.map((n, i) => (
-                            <circle key={`c-${i}`} cx={n.x} cy={n.y} r="2.2" className="fill-ember" style={{ animation: "node-pulse 3.2s ease-in-out infinite", animationDelay:n.delay}}/>
-                        ))}
-                        <g style={{ transformOrigin:"50px 50px", animation: "spin-slow 24s linear infinite"}}>
-                            <path d="M50 30 L55 50 L50 70 L45 50 Z" className="fill-ember"/>
-                            <path d="M30 50 L50 45 L70 50 L50 55 Z" className="fill-ember"/>
-                        </g>
-                        <circle cx="50" cy="50" r="6" className="fill-leaf"/>
-                        <circle cx="50" cy="50" r="3" className="fill-forest"/>
-                    </svg>
+            <Image
+                src="/images/students-learning-tablet.png"
+                alt="Students learning together with a tablet in their classroom"
+                fill
+                priority
+                sizes="100vw"
+                className="-z-20 object-cover object-center"
+            />
+            <div className="absolute inset-0 -z-10 bg-linear-to-r from-sea-green-100/95 via-sea-green-100/75 to-sea-green-100/10" />
+            <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-linear-to-t from-sea-green-100/85 to-transparent" />
+            <div className="mx-auto w-full max-w-7xl px-6 pb-16 pt-28 md:px-10 md:pb-20 lg:px-12">
+                <motion.div className="max-w-3xl" variants={itemVariants}>
+                    <p className="mb-5 inline-flex items-center gap-2 text-xs font-semibold uppercase text-light-green-500">
+                        <span className="size-2 rounded-full bg-light-green-500" />
+                        Learning technology, built for Africa
+                    </p>
+                    <h1 className="max-w-3xl font-display text-5xl font-medium leading-[1.04] md:text-6xl lg:text-7xl">
+                        Every learner deserves a world of possibility.
+                    </h1>
+                    <p className="mt-6 max-w-xl text-base leading-7 text-white/85 md:text-lg">
+                        We create practical digital tools that help schools deliver better learning, even when the internet cannot keep up.
+                    </p>
+                    <div className="mt-8 flex flex-wrap gap-3">
+                        <Link href="#products" className={cn(buttonVariants(), "h-12 rounded-md bg-light-green-500 px-6 font-semibold text-sea-green-100 hover:bg-light-green-600")}>
+                            Explore our solutions <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                        <Link href="/contact" className={cn(buttonVariants({ variant: "outline" }), "h-12 rounded-md border-white/60 bg-white/5 px-6 text-white hover:bg-white/15 hover:text-white")}>
+                            Partner with us
+                        </Link>
+                    </div>
                 </motion.div>
+                <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/30 pt-5 text-sm text-white/85 md:mt-16">
+                    <span>Offline-ready learning</span>
+                    <span className="hidden size-1 rounded-full bg-light-green-500 sm:block" />
+                    <span>Tools for educators</span>
+                    <span className="hidden size-1 rounded-full bg-light-green-500 sm:block" />
+                    <span>Designed for local realities</span>
+                    <Link href="#products" className="ml-auto hidden items-center gap-2 font-medium text-light-green-500 md:flex">
+                        Discover the platform <ArrowDown className="size-4" />
+                    </Link>
+                </div>
             </div>
         </motion.section >
     );

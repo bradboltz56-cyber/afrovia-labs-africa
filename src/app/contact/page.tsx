@@ -1,24 +1,17 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function ContactPage() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-paper">
-        <section className="px-6 py-24">
-          <div className="mx-auto max-w-6xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-forest/60">Contact</span>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
-              Get in touch
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink/80">
-              We would love to hear from you. Reach out for partnerships, pilot schools, or support.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <MarketingPage
+      eyebrow="Contact"
+      title="Let’s make more room for learning."
+      description="We would love to hear from schools, educators and partners interested in accessible digital education."
+      image="/images/students-learning-tablet.png"
+      imageAlt="Learners exploring content together on a tablet"
+      sectionTitle="What would you like to build together?"
+      sectionCopy="Start a conversation about bringing learning tools to your school, exploring a partnership or learning more about what we do."
+      points={["School pilots and education partnerships", "Questions about our learning solutions", "Ideas for making digital learning more accessible"]}
+      related={[{ label: "Explore our solutions", href: "/products" }, { label: "Learn about AfroviaLabs", href: "/about" }]}
+    />
   );
 }

@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${fraunces.variable} ${plexSans.variable}  ${plexMono.variable} h-full antialiased`}
     >
-      <body className="bg-forest text-ink font-sans antialiased selection:bg-ember/30" suppressHydrationWarning>{children}</body>
+      <body className="bg-white text-black font-sans antialiased selection:bg-light-green-300/40" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
